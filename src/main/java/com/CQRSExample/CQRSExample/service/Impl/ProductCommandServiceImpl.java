@@ -20,7 +20,7 @@ public class ProductCommandServiceImpl implements ProductCommandService {
     // olusturulan product ile read tablosunu gunceleme islemi yapiyorum
 
     @Override
-    @Transactional("commandTransactionManager")
+    @Transactional
     public ProductCommand createProduct(ProductCommand product){
         ProductCommand savedProductCommand = repository.save(product);
         productSyncService.syncProduct(savedProductCommand);

@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/commands/products")
 public class ProductCommandController {
 
-    private ProductCommandService service;
+    private final ProductCommandService service;
+
+
     @PostMapping
     public ProductCommand createProduct(@RequestBody ProductCommand product) {
         return service.createProduct(product);
